@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>content.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Python</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="content.html">Content</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="course-content" class="section level1">
+<h1>Course Content</h1>
+<p><br><br></p>
+<div id="introduction-to-data-structures-in-python" class="section level2">
+<h2><a href="./html/Intro.html" target="_blank">Introduction to Data Structures in Python</a></h2>
+<ul>
+<li><h4 id="variable-assignment">Variable Assignment</h4></li>
+<li><h4 id="multi-line-statements">Multi line statements</h4></li>
+<li><h4 id="multiple-assignment">Multiple assignment</h4></li>
+<li><h4 id="string-formating">String formating</h4></li>
+<li><h4 id="list">List</h4></li>
+<li><h4 id="tuple">Tuple</h4></li>
+<li><h4 id="dict">Dict</h4></li>
+<li><h4 id="set">Set</h4></li>
+<li><h4 id="inbuilt-functions">Inbuilt functions</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="explore-conditional-statements-and-loops" class="section level2">
+<h2><a href="./html/If_for.html" target="_blank">Explore conditional statements and Loops</a></h2>
+<ul>
+<li><h4 id="if-blocks">If blocks</h4></li>
+<li><h4 id="if-else">If Else</h4></li>
+<li><h4 id="if-elif-else">If Elif Else</h4></li>
+<li><h4 id="conditional-statements-and-or">Conditional statements (and, or)</h4></li>
+<li><h4 id="loops-over-listdictrange">Loops over List/Dict/Range</h4></li>
+<li><h4 id="break-and-continue">Break and Continue</h4></li>
+<li><h4 id="nested-loops">Nested loops</h4></li>
+<li><h4 id="list-comprehensions">List Comprehensions</h4></li>
+<li><h4 id="enumerate">enumerate()</h4></li>
+<li><h4 id="zip">zip()</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="understand-string-and-inbuilt-functions-for-string-manipulations" class="section level2">
+<h2><a href="./html/String.html" target="_blank">Understand String and inbuilt functions for string manipulations</a></h2>
+<ul>
+<li><h4 id="lower-upper-capitalize">lower, upper, capitalize</h4></li>
+<li><h4 id="startswith-endswith">startswith, endswith</h4></li>
+<li><h4 id="strip-lstrip-rstrip">strip, lstrip, rstrip</h4></li>
+<li><h4 id="join">join</h4></li>
+<li><h4 id="count-find-index-rfind-rindex-replace">count, find, index, rfind, rindex, replace</h4></li>
+<li><h4 id="isdigit">isdigit</h4></li>
+<li><h4 id="split">split</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="regular-expression" class="section level2">
+<h2><a href="./html/regex.html" target="_blank">Regular Expression</a></h2>
+<ul>
+<li><h4 id="the-re-module">The re module</h4></li>
+<li><h4 id="match">match()</h4></li>
+<li><h4 id="search">search()</h4></li>
+<li><h4 id="findall">findall()</h4></li>
+<li><h4 id="sub">sub()</h4></li>
+<li><h4 id="concept-of-group-and-groups">concept of group() and groups()</h4></li>
+<li><h4 id="different-regular-expression-constructs">Different regular expression constructs</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="file-input-and-output" class="section level2">
+<h2><a href="./html/FileIO.html" target="_blank">File Input and Output</a></h2>
+<ul>
+<li><h4 id="the-os-module">The os module</h4></li>
+<li><h4 id="dir-content">Dir content</h4></li>
+<li><h4 id="create-remove-files-directories">Create, Remove files, directories</h4></li>
+<li><h4 id="file-properties">File properties</h4></li>
+<li><h4 id="file-open-and-close">File open and close</h4></li>
+<li><h4 id="with-statement">With statement</h4></li>
+<li><h4 id="read-line-by-line">Read line by line</h4></li>
+<li><h4 id="bed-file-example">Bed file example</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="bed-parser-example" class="section level2">
+<h2><a href="./html/bedparser_example.html" target="_blank">Bed Parser Example</a></h2>
+<ul>
+<li><h4 id="given-a-bed-file-calculate-chromosome-wise-gene-count">Given a bed file, calculate chromosome wise gene count</h4></li>
+<li><h4 id="calculate-chromosome-wise-strand-distribution">Calculate chromosome wise strand distribution</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="numpy" class="section level2">
+<h2><a href="./html/Numpy.html" target="_blank">Numpy</a></h2>
+<ul>
+<li><h4 id="create-1d-and-2d-array">Create 1D and 2D array</h4></li>
+<li><h4 id="fetch-elements">Fetch elements</h4></li>
+<li><h4 id="array-operations">Array operations</h4></li>
+<li><h4 id="shape-size-axis-concept">Shape, size, axis concept</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="pandas" class="section level2">
+<h2><a href="./html/Pandas_datastructures.html" target="_blank">Pandas</a></h2>
+<ul>
+<li><h4 id="series">Series</h4></li>
+<li><h4 id="dataframes">DataFrames</h4></li>
+<li><h4 id="create-series-from-ndarraydict">Create series from ndarray/dict</h4></li>
+<li><h4 id="fetch-elements-using-positionlabel">Fetch elements using Position/Label</h4></li>
+<li><h4 id="vectorized-operations-and-label-alignment-with-series">Vectorized operations and label alignment with Series</h4></li>
+<li><h4 id="dataframes-from-seriesdict-of-dictsdict-of-lists">Dataframes from Series/Dict of Dicts/Dict of lists</h4></li>
+<li><h4 id="read-from-csvtsv-file">Read from csv/tsv file</h4></li>
+<li><h4 id="column-selection-addition-deletion">Column selection, addition, deletion</h4></li>
+<li><h4 id="indexing-selection">Indexing / selection</h4></li>
+<li><h4 id="loc-iloc">Loc, iloc</h4></li>
+<li><h4 id="data-alignment-and-arithmetic">Data alignment and arithmetic</h4></li>
+<li><h4 id="merge-tables">Merge tables</h4></li>
+<li><h4 id="play-with-iris-dataset">Play with IRIS dataset</h4></li>
+<li><h4 id="groupby">Groupby</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="matplotlib" class="section level2">
+<h2><a href="./html/Matplotlib.html" target="_blank">Matplotlib</a></h2>
+<ul>
+<li><h4 id="scatter-plot">Scatter plot</h4></li>
+<li><h4 id="histogram">Histogram</h4></li>
+<li><h4 id="sub-plots">Sub plots</h4></li>
+<li><h4 id="line-plot">Line plot</h4></li>
+<li><h4 id="bar-plot">Bar plot</h4></li>
+<li><h4 id="box-plot">Box plot</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="seaborn" class="section level2">
+<h2><a href="./html/seaborn.html" target="_blank">Seaborn</a></h2>
+<ul>
+<li><h4 id="visualizing-statistical-relationships">Visualizing statistical relationships</h4></li>
+<li><h4 id="relplot-scatter-plot">relplot / Scatter plot</h4></li>
+<li><h4 id="line-plot-1">Line Plot</h4></li>
+<li><h4 id="faceting">Faceting</h4></li>
+<li><h4 id="categorical-scatterplots">Categorical scatterplots</h4></li>
+<li><h4 id="catplot">catplot</h4></li>
+<li><h4 id="boxplot">Boxplot</h4></li>
+<li><h4 id="beeswarm-plot">Beeswarm plot</h4></li>
+<li><h4 id="boxen-plot">Boxen plot</h4></li>
+<li><h4 id="violinplots">Violinplots</h4></li>
+<li><h4 id="count-plot">Count plot</h4></li>
+<li><h4 id="bar-plots">Bar plots</h4></li>
+<li><h4 id="widelong-format-data">Wide/Long format data</h4></li>
+<li><h4 id="pair-plot">Pair plot</h4></li>
+<li><h4 id="pair-plot-1">Pair plot</h4></li>
+<li><h4 id="hexbin-plots">Hexbin plots</h4></li>
+<li><h4 id="kernel-density-estimation-based-plots">Kernel density estimation based plots</h4></li>
+</ul>
+<p><br></p>
+</div>
+<div id="study-more" class="section level2">
+<h2><a href="./html/resources.html" target="_blank">Study More</a></h2>
+<p><br></p>
+</div>
+<div id="download-ipynb-files" class="section level2">
+<h2><a href="./html/notebook.zip">Download ipynb files</a></h2>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
