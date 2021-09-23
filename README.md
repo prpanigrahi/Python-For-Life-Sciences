@@ -1,6 +1,8 @@
 # Learn_Python
-This repository contains Course materials for "Python For Life Sciences" course which I use to train online. The content can be found below.
-Download this repository and open index.html in browser.
+    This repository contains Course materials for "Python For Life Sciences" course which I use to train online.
+    Download this repository and open index.html in browser.
+    Under docs/html, download notebook.zip to download the jupyter notebooks for each chapter.
+
 
 # Course Content
 Introduction to Data Structures in Python
